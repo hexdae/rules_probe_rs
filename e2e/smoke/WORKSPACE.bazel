@@ -1,19 +1,19 @@
 # Override http_archive for local testing
 local_repository(
-    name = "com_myorg_rules_mylang",
+    name = "probe_rs_tools",
     path = "../..",
 )
 
 #---SNIP--- Below here is re-used in the workspace snippet published on releases
 
 ######################
-# rules_mylang setup #
+# probe_rs_tools setup #
 ######################
-# Fetches the rules_mylang dependencies.
+# Fetches the probe_rs_tools dependencies.
 # If you want to have a different version of some dependency,
 # you should fetch it *before* calling this.
 # Alternatively, you can skip calling this function, so long as you've
 # already fetched all the dependencies.
-load("@com_myorg_rules_mylang//mylang:repositories.bzl", "rules_mylang_dependencies")
+load("@probe_rs_tools//probe_rs_tools:repositories.bzl", "probe_rs_tools_dependencies")
 
-rules_mylang_dependencies()
+probe_rs_tools_dependencies()

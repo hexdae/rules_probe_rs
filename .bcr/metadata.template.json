@@ -1,7 +1,7 @@
 {
-  "homepage": "https://github.com/myorg/rules_mylang",
+  "homepage": "https://github.com/hexdae/probe_rs_tools",
   "maintainers": [],
-  "repository": ["github:myorg/rules_mylang"],
+  "repository": ["github:hexdae/probe_rs_tools"],
   "versions": [],
   "yanked_versions": {}
 }
