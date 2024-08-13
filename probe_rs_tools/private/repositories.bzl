@@ -1,6 +1,6 @@
 """deps.bzl"""
 
-load(":archives.bzl", "PROBE_RS_TOOLS")
+load(":versions.bzl", "PROBE_RS_VERSIONS")
 
 def _probe_rs_tools_archive_repo_impl(repository_ctx):
     """Defines a host-specific repository for the probe-rs tool."""
@@ -65,7 +65,7 @@ def probe_rs_tools_repositories(name, version, tools = ["probe-rs"], archives = 
         archives: A dictionary of version to archive attributes.
     """
     if not archives:
-        archives = PROBE_RS_TOOLS
+        archives = PROBE_RS_VERSIONS
 
     archive = archives.get(version)
 
