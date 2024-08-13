@@ -5,3 +5,10 @@ local_path_override(
     module_name = "probe_rs_tools",
     path = "../..",
 )
+
+probe_rs = use_extension("@probe_rs_tools//probe_rs_tools:extensions.bzl", "probe_rs")
+probe_rs.tools(
+    name = "probe_rs",
+    version = "0.24.0",
+)
+use_repo(probe_rs, "probe_rs")
