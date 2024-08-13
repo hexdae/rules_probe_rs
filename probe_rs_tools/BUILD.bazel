@@ -1,12 +1,13 @@
 load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
 
+package(default_visibility = ["//visibility:public"])
+
 bzl_library(
     name = "repositories",
-    srcs = ["repositories.bzl"],
     visibility = ["//visibility:public"],
     deps = [
-        "//probe_rs_tools/private:toolchains_repo",
-        "//probe_rs_tools/private:versions",
+        "//probe_rs_tools/private:archives",
+        "//probe_rs_tools/private:repositories",
         "@bazel_tools//tools/build_defs/repo:http.bzl",
         "@bazel_tools//tools/build_defs/repo:utils.bzl",
     ],
@@ -23,10 +24,4 @@ bzl_library(
     srcs = ["extensions.bzl"],
     visibility = ["//visibility:public"],
     deps = [":repositories"],
-)
-
-bzl_library(
-    name = "toolchain",
-    srcs = ["toolchain.bzl"],
-    visibility = ["//visibility:public"],
 )
