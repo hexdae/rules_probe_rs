@@ -28,7 +28,7 @@ Run `bazel run //:gazelle` to keep them up-to-date.
 ## Using this as a development dependency of other rules
 
 You'll commonly find that you develop in another WORKSPACE, such as
-some other ruleset that depends on probe_rs_tools, or in a nested
+some other ruleset that depends on rules_probe_rs, or in a nested
 WORKSPACE in the integration_tests folder.
 
 To always tell Bazel to use this directory rather than some release
@@ -36,11 +36,11 @@ artifact or a version fetched from the internet, run this from this
 directory:
 
 ```sh
-OVERRIDE="--override_repository=probe_rs_tools=$(pwd)/probe_rs_tools"
+OVERRIDE="--override_repository=rules_probe_rs=$(pwd)/rules_probe_rs"
 echo "common $OVERRIDE" >> ~/.bazelrc
 ```
 
-This means that any usage of `@probe_rs_tools` on your system will point to this folder.
+This means that any usage of `@rules_probe_rs` on your system will point to this folder.
 
 ## Releasing
 

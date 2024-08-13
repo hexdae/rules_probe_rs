@@ -3,7 +3,7 @@ See https://bazel.build/rules/testing#testing-starlark-utilities
 """
 
 load("@bazel_skylib//lib:unittest.bzl", "asserts", "unittest")
-load("//probe_rs_tools/private:versions.bzl", "PROBE_RS_VERSIONS")
+load("//probe_rs/private:versions.bzl", "PROBE_RS_VERSIONS")
 
 def _smoke_test_impl(ctx):
     env = unittest.begin(ctx)

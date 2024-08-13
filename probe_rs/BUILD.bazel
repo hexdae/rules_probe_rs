@@ -6,7 +6,7 @@ bzl_library(
     name = "repositories",
     visibility = ["//visibility:public"],
     deps = [
-        "//probe_rs_tools/private:repositories",
+        "//probe_rs/private:repositories",
         "@bazel_tools//tools/build_defs/repo:http.bzl",
         "@bazel_tools//tools/build_defs/repo:utils.bzl",
     ],

@@ -1,6 +1,6 @@
 """Extensions for bzlmod."""
 
-load("@probe_rs_tools//probe_rs_tools/private:repositories.bzl", "probe_rs_tools_repositories")
+load("@rules_probe_rs//probe_rs/private:repositories.bzl", "probe_rs_tools_repositories")
 
 _DEFAULT_NAME = "probe_rs"
 

@@ -35,7 +35,7 @@ http_archive(
     name = "probe_rs_tools",
     sha256 = "${SHA}",
     strip_prefix = "${PREFIX}",
-    url = "https://github.com/hexdae/probe_rs_tools/releases/download/${TAG}/${ARCHIVE}",
+    url = "https://github.com/hexdae/rules_probe_rs/releases/download/${TAG}/${ARCHIVE}",
 )
 EOF
 

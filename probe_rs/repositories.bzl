@@ -1,6 +1,6 @@
 """repositories.bzl"""
 
-load("@probe_rs_tools//probe_rs_tools/private:repositories.bzl", "probe_rs_tools_repositories")
+load("@rules_probe_rs//probe_rs/private:repositories.bzl", "probe_rs_tools_repositories")
 
 def probe_rs_tools_dependencies(name = "probe-rs", version = "0.24.0", tools = ["probe-rs"], archives = None):
     """Defines the probe-rs tool repositories for WORKSPACE."""

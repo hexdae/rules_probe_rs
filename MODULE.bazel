@@ -1,7 +1,7 @@
 "Bazel dependencies"
 
 module(
-    name = "probe_rs_tools",
+    name = "rules_probe_rs",
     version = "0.0.1",
     compatibility_level = 1,
 )
@@ -15,7 +15,7 @@ bazel_dep(name = "aspect_bazel_lib", version = "1.32.1", dev_dependency = True)
 bazel_dep(name = "buildifier_prebuilt", version = "6.1.2", dev_dependency = True)
 
 probe_rs = use_extension(
-    "@probe_rs_tools//probe_rs_tools:extensions.bzl",
+    "@rules_probe_rs//probe_rs:extensions.bzl",
     "probe_rs",
     dev_dependency = True,
 )

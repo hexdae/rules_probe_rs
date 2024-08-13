@@ -1,7 +1,7 @@
 {
-  "homepage": "https://github.com/hexdae/probe_rs_tools",
+  "homepage": "https://github.com/hexdae/rules_probe_rs",
   "maintainers": [],
-  "repository": ["github:hexdae/probe_rs_tools"],
+  "repository": ["github:hexdae/rules_probe_rs"],
   "versions": [],
   "yanked_versions": {}
 }

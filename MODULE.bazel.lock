@@ -90,16 +90,16 @@
   },
   "selectedYankedVersions": {},
   "moduleExtensions": {
-    "//probe_rs_tools:extensions.bzl%probe_rs": {
+    "//probe_rs:extensions.bzl%probe_rs": {
       "general": {
-        "bzlTransitiveDigest": "+0dqyZXSYfU0dERUYz5JEzo/RK3YP0XC9OA1R0Nfx10=",
-        "usagesDigest": "qZTnlpCPh7Nsg4zLsdXHqRZLij/MXRxoA7kPz7uOrpM=",
+        "bzlTransitiveDigest": "bsT0kJGb1wtd6h9Gcc+I6FK9YJCKZC0/PuHAXoJDmb0=",
+        "usagesDigest": "cM/wtzqLSNLxHxKzC8SaFpjkHwK73oOsNreBM3eKlVM=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
         "generatedRepoSpecs": {
           "probe_rs_tools_aarch64_unknown_linux_gnu": {
-            "bzlFile": "@@//probe_rs_tools/private:repositories.bzl",
+            "bzlFile": "@@//probe_rs/private:repositories.bzl",
             "ruleClassName": "probe_rs_tools_archive_repo",
             "attributes": {
               "tools": [
@@ -115,7 +115,7 @@
             }
           },
           "probe_rs_tools_x86_64_apple_darwin": {
-            "bzlFile": "@@//probe_rs_tools/private:repositories.bzl",
+            "bzlFile": "@@//probe_rs/private:repositories.bzl",
             "ruleClassName": "probe_rs_tools_archive_repo",
             "attributes": {
               "tools": [
@@ -131,7 +131,7 @@
             }
           },
           "probe_rs": {
-            "bzlFile": "@@//probe_rs_tools/private:repositories.bzl",
+            "bzlFile": "@@//probe_rs/private:repositories.bzl",
             "ruleClassName": "probe_rs_repo",
             "attributes": {
               "tools": [
@@ -162,7 +162,7 @@
             }
           },
           "probe_rs_tools_x86_64_unknown_linux_gnu": {
-            "bzlFile": "@@//probe_rs_tools/private:repositories.bzl",
+            "bzlFile": "@@//probe_rs/private:repositories.bzl",
             "ruleClassName": "probe_rs_tools_archive_repo",
             "attributes": {
               "tools": [
@@ -178,7 +178,7 @@
             }
           },
           "probe_rs_tools_x86_64_pc_windows_msvc": {
-            "bzlFile": "@@//probe_rs_tools/private:repositories.bzl",
+            "bzlFile": "@@//probe_rs/private:repositories.bzl",
             "ruleClassName": "probe_rs_tools_archive_repo",
             "attributes": {
               "tools": [
@@ -194,7 +194,7 @@
             }
           },
           "probe_rs_tools_aarch64_apple_darwin": {
-            "bzlFile": "@@//probe_rs_tools/private:repositories.bzl",
+            "bzlFile": "@@//probe_rs/private:repositories.bzl",
             "ruleClassName": "probe_rs_tools_archive_repo",
             "attributes": {
               "tools": [
@@ -213,7 +213,7 @@
         "recordedRepoMappingEntries": [
           [
             "",
-            "probe_rs_tools",
+            "rules_probe_rs",
             ""
           ]
         ]
