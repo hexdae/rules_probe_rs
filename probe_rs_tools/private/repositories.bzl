@@ -55,7 +55,7 @@ probe_rs_repo = repository_rule(
     },
 )
 
-def probe_rs_tools_repositories(name, version, tools = ["probe-rs"], archives = PROBE_RS_TOOLS):
+def probe_rs_tools_repositories(name, version, tools = ["probe-rs"], archives = None):
     """Generate probe-rs repositories for the given version and tools.
 
     Args:
@@ -64,6 +64,9 @@ def probe_rs_tools_repositories(name, version, tools = ["probe-rs"], archives = 
         tools: A list of tools to include in the repository.
         archives: A dictionary of version to archive attributes.
     """
+    if not archives:
+        archives = PROBE_RS_TOOLS
+
     archive = archives.get(version)
 
     if not archive:

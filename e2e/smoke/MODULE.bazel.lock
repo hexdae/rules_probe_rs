@@ -82,7 +82,7 @@
     },
     "@@probe_rs_tools~//probe_rs_tools:extensions.bzl%probe_rs": {
       "general": {
-        "bzlTransitiveDigest": "MqAqMuOUqn/Cy2uSYsNr7tS60ziRLjkLIigTlb/f4IU=",
+        "bzlTransitiveDigest": "5nmXUp3EWRBKBtB/Hph/AF16wB/Z351g002CObtT05E=",
         "usagesDigest": "mCq3temXDGlkB9H7JdtvLCgwJmJWaaGuw/R68kQnK6o=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
