@@ -1,5 +1,6 @@
 load("@rules_rust//rust:defs.bzl", "rust_binary")
 load("@aspect_bazel_lib//lib:transitions.bzl", "platform_transition_filegroup")
+load("@rules_probe_rs//probe_rs:defs.bzl", "probe_rs")
 
 platform(
     name = "nrf52840",
@@ -13,12 +14,6 @@ rust_binary(
     name = "blinky",
     srcs = ["src/main.rs"],
     linker_script = ":linker.x",
-    rustc_flags = [
-        "-C",
-        "link-arg=-mcpu=cortex-m4",
-        "-C",
-        "link-arg=-mthumb",
-    ],
     target_compatible_with = [
         "@platforms//cpu:armv7e-m",
         "@platforms//os:none",
@@ -38,4 +33,10 @@ platform_transition_filegroup(
     name = "elf",
     srcs = [":blinky"],
     target_platform = ":nrf52840",
+)
+
+probe_rs.run(
+    name = "run",
+    chip = "nRF52840_xxAA",
+    elf = ":elf",
 )
