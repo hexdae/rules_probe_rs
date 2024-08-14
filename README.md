@@ -23,7 +23,7 @@
 
 </p>
 
-The goal of the project is to add a simple way to run probe-rs from bazel, similar to cargo embed for the rust ecosystem.
+This project aims to provide a simple way to run probe-rs from bazel, similar to the function `cargo embed` has in the rust ecosystem.
 
 If this project was useful to you, give it a ⭐️ and I'll keep improving it!
 
