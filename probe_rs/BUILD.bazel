@@ -16,6 +16,10 @@ bzl_library(
     name = "defs",
     srcs = ["defs.bzl"],
     visibility = ["//visibility:public"],
+    deps = [
+        "@bazel_skylib//:lib",
+        "@bazel_skylib//rules:native_binary",
+    ],
 )
 
 bzl_library(
