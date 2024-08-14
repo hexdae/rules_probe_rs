@@ -1,4 +1,4 @@
-# Rust ❤️ Bazel -> rules_probe_rs
+# Rust ❤️ Bazel: rules_probe_rs
 
 <p align="center">
 
