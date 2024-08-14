@@ -36,18 +36,23 @@ If this project was useful to you, give it a ⭐️ and I'll keep improving it!
 
 ## Installation
 
+### Official releases (comping soon to BCR)
+
 For official releases you can use:
 <https://github.com/hexdae/rules_probe_rs/releases>
 
-## Bzlmod
+### From source (this repository)
 
 ```python
 bazel_dep(name = "rules_probe_rs", version = "<version>")
 
-probe_rs = use_extension("@rules_probe_rs//:extensions.bzl", "probe_rs")
-
-probe_rs.tools(
-    version = "0.24.0",
+git_override(
+    module_name = "rules_probe_rs",
+    remote = "https://github.com/hexdae/rules_probe_rs.git",
+    commit = "<commit>",
 )
+
+probe_rs = use_extension("@rules_probe_rs//:extensions.bzl", "probe_rs")
+probe_rs.tools(version = "0.24.0",)
 use_repo(probe_rs, "probe_rs")
 ```
