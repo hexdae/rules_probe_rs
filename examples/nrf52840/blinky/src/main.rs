@@ -13,8 +13,8 @@ async fn main(_spawner: Spawner) {
 
     loop {
         led.set_high();
-        Timer::after_millis(300).await;
+        Timer::after_millis(30).await;
         led.set_low();
-        Timer::after_millis(300).await;
+        Timer::after_millis(30).await;
     }
 }

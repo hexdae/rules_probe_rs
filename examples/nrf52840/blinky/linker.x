@@ -1,14 +1,3 @@
-/* Provides information about the memory layout of the device */
-/* This will be provided by the user (see `memory.x`) or by a Board Support Crate */
-/* INCLUDE memory.x */
-MEMORY {
-  /* NOTE 1 K = 1 KiBi = 1024 bytes */
-  /* These values correspond to the NRF52840 with Softdevices S140 7.0.1 */
-  FLASH : ORIGIN = 0x00027000, LENGTH = 868K
-  RAM : ORIGIN = 0x20020000, LENGTH = 128K
-}
-
-
 /* # Developer notes
 
 - Symbols that start with a double underscore (__) are considered "private"
@@ -31,7 +20,19 @@ MEMORY {
 
 /* Provides information about the memory layout of the device */
 /* This will be provided by the user (see `memory.x`) or by a Board Support Crate */
-/* INCLUDE memory.x */
+MEMORY
+{
+  /* NOTE 1 K = 1 KiBi = 1024 bytes */
+  FLASH : ORIGIN = 0x00000000, LENGTH = 1024K
+  RAM : ORIGIN = 0x20000000, LENGTH = 256K
+
+  /* These values correspond to the NRF52840 with Softdevices S140 7.3.0 */
+  /*
+     FLASH : ORIGIN = 0x00027000, LENGTH = 868K
+     RAM : ORIGIN = 0x20020000, LENGTH = 128K
+  */
+}
+
 
 /* # Entry point = reset vector */
 EXTERN(__RESET_VECTOR);
@@ -275,7 +276,6 @@ the -fPIC flag. See the documentation of the `cc::Build.pic` method for details.
 
 /* Provides weak aliases (cf. PROVIDED) for device specific interrupt handlers */
 /* This will usually be provided by a device crate generated using svd2rust (see `device.x`) */
-/* INCLUDE device.x */
 PROVIDE(POWER_CLOCK = DefaultHandler);
 PROVIDE(RADIO = DefaultHandler);
 PROVIDE(UARTE0_UART0 = DefaultHandler);
@@ -321,13 +321,12 @@ PROVIDE(PWM3 = DefaultHandler);
 PROVIDE(SPIM3 = DefaultHandler);
 
 
+
 ASSERT(SIZEOF(.vector_table) <= 0x400, "
 There can't be more than 240 interrupt handlers. This may be a bug in
 your device crate, or you may have registered more than 240 interrupt
 handlers.");
 
-
-/* INCLUDE defmt.x */
 /* exhaustively search for these symbols */
 EXTERN(_defmt_acquire);
 EXTERN(_defmt_release);
