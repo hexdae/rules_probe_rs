@@ -15,7 +15,7 @@ bazel build //blinky/...
 We use `rules_probe_rs` to flash the code to the NRF52840 and enable optional debugging / RTT.
 
 ```bash
-bazel run //blinky:probe_rs
+bazel run //blinky:run
 ```
 
 ## Notes
