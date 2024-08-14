@@ -1,6 +1,8 @@
 bazel_dep(name = "rules_probe_rs", version = "0.0.0", dev_dependency = True)
 bazel_dep(name = "bazel_skylib", version = "1.7.1", dev_dependency = True)
 
+bazel_dep(name = "rules_rust", version = "0.49.3")
+
 local_path_override(
     module_name = "rules_probe_rs",
     path = "../..",

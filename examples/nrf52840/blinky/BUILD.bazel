@@ -1,0 +1,41 @@
+load("@rules_rust//rust:defs.bzl", "rust_binary")
+load("@aspect_bazel_lib//lib:transitions.bzl", "platform_transition_filegroup")
+
+platform(
+    name = "nrf52840",
+    constraint_values = [
+        "@platforms//cpu:armv7e-m",
+        "@platforms//os:none",
+    ],
+)
+
+rust_binary(
+    name = "blinky",
+    srcs = ["src/main.rs"],
+    linker_script = ":linker.x",
+    rustc_flags = [
+        "-C",
+        "link-arg=-mcpu=cortex-m4",
+        "-C",
+        "link-arg=-mthumb",
+    ],
+    target_compatible_with = [
+        "@platforms//cpu:armv7e-m",
+        "@platforms//os:none",
+    ],
+    deps = [
+        "@crates//:cortex-m-rt",
+        "@crates//:defmt",
+        "@crates//:defmt-rtt",
+        "@crates//:embassy-executor",
+        "@crates//:embassy-nrf",
+        "@crates//:embassy-time",
+        "@crates//:panic-probe",
+    ],
+)
+
+platform_transition_filegroup(
+    name = "elf",
+    srcs = [":blinky"],
+    target_platform = ":nrf52840",
+)

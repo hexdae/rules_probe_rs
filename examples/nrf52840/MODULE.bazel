@@ -1,0 +1,50 @@
+bazel_dep(name = "aspect_bazel_lib", version = "2.7.9")
+
+bazel_dep(name = "bazel_skylib", version = "1.7.1", dev_dependency = True)
+bazel_dep(name = "rules_probe_rs", version = "0.0.0", dev_dependency = True)
+
+bazel_dep(name = "rules_rust", version = "0.49.3")
+bazel_dep(name = "toolchains_arm_gnu", version = "1.0.3")
+
+local_path_override(
+    module_name = "rules_probe_rs",
+    path = "../..",
+)
+
+# ARM cross compiler (needed for the linker)
+arm_toolchain = use_extension("@toolchains_arm_gnu//:extensions.bzl", "arm_toolchain")
+arm_toolchain.arm_none_eabi(version = "12.3.1-1.2")
+use_repo(arm_toolchain, "arm_none_eabi")
+
+register_toolchains("//toolchain:all")
+
+# Rust toolchain
+rust = use_extension("@rules_rust//rust:extensions.bzl", "rust")
+rust.toolchain(
+    edition = "2021",
+    extra_target_triples = ["thumbv7em-none-eabihf"],
+    versions = ["1.80.1"],
+)
+use_repo(rust, "rust_toolchains")
+
+register_toolchains("@rust_toolchains//:all")
+
+# Rust crates
+crate = use_extension("@rules_rust//crate_universe:extension.bzl", "crate")
+crate.from_cargo(
+    name = "crates",
+    cargo_lockfile = "//:Cargo.lock",
+    manifests = [
+        "//:Cargo.toml",
+        "//blinky:Cargo.toml",
+    ],
+)
+use_repo(crate, "crates")
+
+# Probe-rs tools
+probe_rs = use_extension("@rules_probe_rs//probe_rs:extensions.bzl", "probe_rs")
+probe_rs.tools(
+    name = "probe_rs",
+    version = "0.24.0",
+)
+use_repo(probe_rs, "probe_rs")
