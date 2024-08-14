@@ -1,18 +1,53 @@
 # Bazel rules for rules_probe_rs
 
+<p align="center">
+
+<a href="https://github.com/hexdae/rules_probe_rs/blob/master/LICENSE">
+    <img alt="GitHub license" src="https://img.shields.io/github/license/hexdae/rules_probe_rs?color=success">
+</a>
+
+<a href="https://github.com/hexdae/rules_probe_rs/stargazers">
+    <img alt="GitHub stars" src="https://img.shields.io/github/stars/hexdae/rules_probe_rs?color=success">
+</a>
+
+<a href="https://github.com/hexdae/rules_probe_rs/issues">
+    <img alt="GitHub issues" src="https://img.shields.io/github/issues/hexdae/rules_probe_rs">
+</a>
+
+</p>
+
+<p align="center">
+
+<img src="https://probe.rs/images/banner.svg" width="100px"/>
+<img src="https://blog.bazel.build/images/bazel-icon.svg" width="100px"/>
+
+</p>
+
+The goal of the project is to add a simple way to run probe-rs from bazel, similar to cargo embed for the rust ecosystem.
+
+If this project was useful to you, give it a ⭐️ and I'll keep improving it!
+
+## Features
+
+- [MODULE support](#bzlmod)
+- [Examples](./examples)
+- Remote execution support
+- Linux, MacOS, Windows
+
 ## Installation
 
-From the release you wish to use:
+For official releases you can use:
 <https://github.com/hexdae/rules_probe_rs/releases>
-copy the WORKSPACE snippet into your `WORKSPACE` file.
 
-To use a commit rather than a release, you can point at any SHA of the repo.
+## Bzlmod
 
-For example to use commit `abc123`:
+```python
+bazel_dep(name = "rules_probe_rs", version = "<version>")
 
-1. Replace `url = "https://github.com/hexdae/rules_probe_rs/releases/download/v0.1.0/rules_probe_rs-v0.1.0.tar.gz"` with a GitHub-provided source archive like `url = "https://github.com/hexdae/rules_probe_rs/archive/abc123.tar.gz"`
-1. Replace `strip_prefix = "rules_probe_rs-0.1.0"` with `strip_prefix = "rules_probe_rs-abc123"`
-1. Update the `sha256`. The easiest way to do this is to comment out the line, then Bazel will
-   print a message with the correct value. Note that GitHub source archives don't have a strong
-   guarantee on the sha256 stability, see
-   <https://github.blog/2023-02-21-update-on-the-future-stability-of-source-code-archives-and-hashes/>
+probe_rs = use_extension("@rules_probe_rs//:extensions.bzl", "probe_rs")
+
+probe_rs.tools(
+    version = "0.24.0",
+)
+use_repo(probe_rs, "probe_rs")
+```
