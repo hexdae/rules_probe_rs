@@ -1,3 +1,5 @@
+"""NRF52840 cross compilation example"""
+
 bazel_dep(name = "aspect_bazel_lib", version = "2.7.9")
 
 bazel_dep(name = "bazel_skylib", version = "1.7.1", dev_dependency = True)

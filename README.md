@@ -36,7 +36,7 @@ If this project was useful to you, give it a ⭐️ and I'll keep improving it!
 
 ## Installation
 
-### Official releases (comping soon to BCR)
+### Official releases (coming soon to BCR)
 
 For official releases you can use:
 <https://github.com/hexdae/rules_probe_rs/releases>
