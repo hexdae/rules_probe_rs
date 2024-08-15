@@ -23,21 +23,12 @@ cat << EOF
 
 \`\`\`starlark
 bazel_dep(name = "probe_rs_tools", version = "${TAG:1}")
-\`\`\`
 
-## Using WORKSPACE
-
-Paste this snippet into your \`WORKSPACE.bazel\` file:
-
-\`\`\`starlark
-load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-http_archive(
-    name = "probe_rs_tools",
-    sha256 = "${SHA}",
-    strip_prefix = "${PREFIX}",
-    url = "https://github.com/hexdae/rules_probe_rs/releases/download/${TAG}/${ARCHIVE}",
+probe_rs = use_extension("@rules_probe_rs//probe_rs:extensions.bzl", "probe_rs")
+probe_rs.tools(
+    name = "probe_rs",
+    version = "${TAG:1}",
 )
+use_repo(probe_rs, "probe_rs")
+\`\`\`
 EOF
-
-awk 'f;/--SNIP--/{f=1}' e2e/smoke/WORKSPACE.bazel
-echo "\`\`\`" 
