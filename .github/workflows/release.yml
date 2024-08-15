@@ -15,5 +15,5 @@ jobs:
   release:
     uses: bazel-contrib/.github/.github/workflows/release_ruleset.yaml@v6
     with:
-      release_files: probe_rs_tools-*.tar.gz
+      release_files: rules_probe_rs-*.tar.gz
       prerelease: false

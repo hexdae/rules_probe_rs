@@ -7,9 +7,9 @@ local_repository(
 #---SNIP--- Below here is re-used in the workspace snippet published on releases
 
 ######################
-# probe_rs_tools setup #
+# rules_probe_rs setup #
 ######################
-# Fetches the probe_rs_tools dependencies.
+# Fetches the rules_probe_rs dependencies.
 # If you want to have a different version of some dependency,
 # you should fetch it *before* calling this.
 # Alternatively, you can skip calling this function, so long as you've
