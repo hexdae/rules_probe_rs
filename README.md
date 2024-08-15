@@ -57,9 +57,21 @@ probe_rs.tools(version = "0.24.0",)
 use_repo(probe_rs, "probe_rs")
 ```
 
-## .bazelrc
+## RTT support using `DEFMT_LOG`
 
-Add this to your `.bazelrc` to enable RTT symbol generation at build time.
+You can enable RTT support for a specific target by adding the following to your `BUILD.bazel` rust_binary target.
+
+```
+rust_binary(
+    ...
+    rustc_env = {
+        "DEFMT_LOG": "trace",
+    },
+    ...
+)
+```
+
+Alternatively, you can enable RTT support for all targets by adding the following to your `.bazelrc`.
 
 ```
 build --action_env=DEFMT_LOG="trace"
