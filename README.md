@@ -56,3 +56,11 @@ probe_rs = use_extension("@rules_probe_rs//:extensions.bzl", "probe_rs")
 probe_rs.tools(version = "0.24.0",)
 use_repo(probe_rs, "probe_rs")
 ```
+
+## .bazelrc
+
+Add this to your `.bazelrc` to enable RTT symbol generation at build time.
+
+```
+build --action_env=DEFMT_LOG="trace"
+```

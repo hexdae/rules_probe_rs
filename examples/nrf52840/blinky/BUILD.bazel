@@ -31,6 +31,7 @@ rust_binary(
 
 probe_rs.run(
     name = "run",
+    args = ["--no-location"],
     chip = "nRF52840_xxAA",
     elf = ":blinky",
 )
