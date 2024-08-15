@@ -27,7 +27,7 @@ bazel_dep(name = "rules_probe_rs", version = "${TAG:1}")
 probe_rs = use_extension("@rules_probe_rs//probe_rs:extensions.bzl", "probe_rs")
 probe_rs.tools(
     name = "probe_rs",
-    version = "${TAG:1}",
+    version = "0.24.0",
 )
 use_repo(probe_rs, "probe_rs")
 \`\`\`
