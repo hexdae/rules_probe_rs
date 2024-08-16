@@ -52,7 +52,7 @@ git_override(
     commit = "<commit>",
 )
 
-probe_rs = use_extension("@rules_probe_rs//:extensions.bzl", "probe_rs")
+probe_rs = use_extension("@rules_probe_rs//probe_rs:extensions.bzl", "probe_rs")
 probe_rs.tools(version = "0.24.0",)
 use_repo(probe_rs, "probe_rs")
 ```
