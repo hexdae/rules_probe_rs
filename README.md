@@ -36,10 +36,18 @@ If this project was useful to you, give it a ⭐️ and I'll keep improving it!
 
 ## Installation
 
-### Official releases (coming soon to BCR)
+### Official releases
 
-For official releases you can use:
-<https://github.com/hexdae/rules_probe_rs/releases>
+Official releases are available in the BCR, and also at
+<https://github.com/hexdae/rules_probe_rs/releases>.
+
+```python
+bazel_dep(name = "rules_probe_rs", version = "<version>")
+
+probe_rs = use_extension("@rules_probe_rs//probe_rs:extensions.bzl", "probe_rs")
+probe_rs.tools(version = "0.24.0",)
+use_repo(probe_rs, "probe_rs")
+```
 
 ### From source (this repository)
 
