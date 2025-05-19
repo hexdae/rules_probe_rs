@@ -92,7 +92,7 @@
   "moduleExtensions": {
     "//probe_rs:extensions.bzl%probe_rs": {
       "general": {
-        "bzlTransitiveDigest": "DwHvfjqrtJL7YTfUN60VBBFrmiuxkNjdpokBgNtn5jI=",
+        "bzlTransitiveDigest": "qACxDYMmZFnJ5z3DgFxaM5vcM6BluXK+tGm6QjKzbo0=",
         "usagesDigest": "+zWNccExTGGllo4g3lgjBd0d48zg3I7Ad74hDMzF4fQ=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -106,7 +106,7 @@
                 "probe-rs"
               ],
               "url": "https://github.com/probe-rs/probe-rs/releases/download/v0.27.0/probe-rs-tools-aarch64-unknown-linux-gnu.tar.xz",
-              "sha256": "+sytWSuP8ENt1gVrI1L1MtIisFGDHo1G4P/woRE/BYui45xIuf5DstEE4hhy2t+1",
+              "sha256": "7aed7af58c9e267b7145490de61d0147033fadb0a70313fe7dbd363bfd98a728",
               "strip_prefix": "probe-rs-tools-aarch64-unknown-linux-gnu",
               "exec_compatible_with": [
                 "@platforms//os:linux",
@@ -122,7 +122,7 @@
                 "probe-rs"
               ],
               "url": "https://github.com/probe-rs/probe-rs/releases/download/v0.27.0/probe-rs-tools-x86_64-apple-darwin.tar.xz",
-              "sha256": "HAJrt195nRuMs4iLMmO8+cglFz6vo8yWRdncz/0wiqOyi956QRs/k6PS7w9mlrfm",
+              "sha256": "c00a87173008b8279c8d2669e90ce878629abb95ceaa003099adb68d62f3fafb",
               "strip_prefix": "probe-rs-tools-x86_64-apple-darwin",
               "exec_compatible_with": [
                 "@platforms//os:macos",
@@ -169,7 +169,7 @@
                 "probe-rs"
               ],
               "url": "https://github.com/probe-rs/probe-rs/releases/download/v0.27.0/probe-rs-tools-x86_64-unknown-linux-gnu.tar.xz",
-              "sha256": "er7FGiGw0wsbchhRmjue9/ZKCplbKIx+UE8c79+kvqvdM1qg02swxo6WPZKbBtin",
+              "sha256": "314c40db7ded9ae5622c6af8fe5149bcf5c507d7d6f5b7a415d6acf8d2005cb0",
               "strip_prefix": "probe-rs-tools-x86_64-unknown-linux-gnu",
               "exec_compatible_with": [
                 "@platforms//os:linux",
@@ -185,8 +185,7 @@
                 "probe-rs"
               ],
               "url": "https://github.com/probe-rs/probe-rs/releases/download/v0.27.0/probe-rs-tools-x86_64-pc-windows-msvc.zip",
-              "sha256": "5gAm1KAGPHVQQiq6Zr1a0w2Ime6481LkgPF5DjS24WqyIAYNrNJfV9/+iZhb0mXY",
-              "strip_prefix": "probe-rs-tools-x86_64-pc-windows-msvc",
+              "sha256": "88a80e304caf706235c5fd2c75e8c2f6280ff86472348fc3bef19eadb9e47b8c",
               "exec_compatible_with": [
                 "@platforms//os:windows",
                 "@platforms//cpu:x86_64"
@@ -201,7 +200,7 @@
                 "probe-rs"
               ],
               "url": "https://github.com/probe-rs/probe-rs/releases/download/v0.27.0/probe-rs-tools-aarch64-apple-darwin.tar.xz",
-              "sha256": "3Zmh8rQ8G8J6V4ihdRWaKGtJFvAlqaTQN22/RRiCC81PUqNR5b+Jdx83r3FM0QSB",
+              "sha256": "7b1ad0d61f6355a9f095e4d06a5e6149ad9824f4725d4976104486941d652d5c",
               "strip_prefix": "probe-rs-tools-aarch64-apple-darwin",
               "exec_compatible_with": [
                 "@platforms//os:macos",
