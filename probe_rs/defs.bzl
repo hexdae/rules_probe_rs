@@ -10,13 +10,15 @@ def _probe_rs_run(name, elf, chip, args = [], **kwargs):
         elf: The ELF file to run probe-rs on.
         chip: probe-rs chip to use. Ex. "nRF52840_xxAA"
         args: Additional arguments to pass to probe-rs.
-        **kwargs: Additional arguments to pass to native_binary.
+        **kwargs: Additional arguments to pass to the underlying executable rule.
     """
 
     probe_rs_run(
         name = name,
         elf = elf,
         chip = chip,
+        # Resolve this label in the caller's repo mapping so bzlmod users can
+        # `use_repo(..., "probe_rs")` from their main workspace.
         probe_rs = "@probe_rs//:probe-rs",
         probe_rs_args = args,
         **kwargs
