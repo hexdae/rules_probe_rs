@@ -17,7 +17,7 @@ bzl_library(
     srcs = ["defs.bzl"],
     visibility = ["//visibility:public"],
     deps = [
-        "@bazel_skylib//rules:native_binary",
+        "//probe_rs/private:run",
     ],
 )
 
