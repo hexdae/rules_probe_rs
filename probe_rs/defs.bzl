@@ -1,6 +1,6 @@
 "Public API re-exports"
 
-load("@bazel_skylib//rules:native_binary.bzl", "native_binary")
+load("//probe_rs/private:run.bzl", "probe_rs_run")
 
 def _probe_rs_run(name, elf, chip, args = [], **kwargs):
     """Run probe-rs on the given ELF file.
@@ -13,11 +13,12 @@ def _probe_rs_run(name, elf, chip, args = [], **kwargs):
         **kwargs: Additional arguments to pass to native_binary.
     """
 
-    native_binary(
+    probe_rs_run(
         name = name,
-        src = "@probe_rs//:probe-rs",
-        data = [elf],
-        args = ["run", "--chip", chip, "$(locations {})".format(elf)] + args,
+        elf = elf,
+        chip = chip,
+        probe_rs = "@probe_rs//:probe-rs",
+        probe_rs_args = args,
         **kwargs
     )
 
